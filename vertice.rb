@@ -5,6 +5,11 @@ class Vertice
   def initialize(nombre)
     @nombre=nombre
     @vecinos=[]
-    @distancias[]
+    @distancias=[]
   end
+
+  def imprime_nombre
+    puts "#{@nombre}"
+  end
+
 end
