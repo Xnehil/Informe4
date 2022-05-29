@@ -76,6 +76,22 @@ class Grafos
   end
 
   def profundidad_iterativo(vertice_origen, recorrido)
+    orden_recorrido=1
+    #Esto no está terminado. Lo intenté pero no me salió :'v
+    # for
+    # indice_origen=@vertices.find_index(vertice_origen)
+    # recorrido[indice_origen]=orden_recorrido
+    # @vertices[indice_origen].imprime_nombre
+    #
+    # adyacentes=self.devuelve_adyacentes(vertice_origen)
+    #
+    # while adyacentes.any?
+    #   vertice=adyacentes.shift
+    #   if recorrido[vertice-1]
+    #
+    #   end
+    # end
+
 
   end
 
