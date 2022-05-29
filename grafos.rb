@@ -25,9 +25,9 @@ class Grafos
         desde=@vertices.index{ |v| v.nombre==vertice_origen}
         hacia=@vertices.index{ |v| v.nombre==vertice_destino}
         @vertices[desde].vecinos.append(vertice_destino)
-        @vertices[desde].distancias[hacia]=longitud
+        @vertices[desde].distancias.append(longitud)
         @vertices[hacia].vecinos.append(vertice_origen)
-        @vertices[hacia].distancias[desde]=longitud
+        @vertices[hacia].distancias.append(longitud)
       end
     end
   end
@@ -62,7 +62,20 @@ class Grafos
     end
   end
 
-  def elimina_arista
+  def elimina_arista(vertice_origen, vertice_destino)
+    if se_encuentra_arista(vertice_origen, vertice_destino)
+      desde=@vertices.index{ |v| v.nombre==vertice_origen}
+      hacia=@vertices[desde].vecinos.index{ |v| v==vertice_destino}
+      @vertices[desde].vecinos.delete_at(hacia)
+      @vertices[desde].distancias.delete_at(hacia)
+      desde=@vertices.index{ |v| v.nombre==vertice_destino}
+      hacia=@vertices[desde].vecinos.index{ |v| v==vertice_origen}
+      @vertices[desde].vecinos.delete_at(hacia)
+      @vertices[desde].distancias.delete_at(hacia)
+    end
+  end
+
+  def profundidad_iterativo(vertice_origen, recorrido)
 
   end
 

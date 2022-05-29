@@ -22,9 +22,15 @@ grafo.agrega_arista("Arequipa", "Huancayo", 460)
 grafo.agrega_arista("Huancayo", "Lima", 268)
 grafo.agrega_arista("Huancayo", "Ica", 212)
 
-adyacentesLima=grafo.devuelve_adyacentes("Lima")
 puts "Lista de adyacentes de Lima"
-print (adyacentesLima),"\n"
+print (grafo.vertices[0].vecinos),"\n"
+puts "Lista de distancias de Lima"
+print (grafo.vertices[0].distancias),"\n"
+grafo.elimina_arista("Lima", "Ica")
+puts "Lista de adyacentes de Lima"
+print (grafo.vertices[0].vecinos),"\n"
+puts "Lista de distancias de Lima"
+print (grafo.vertices[0].distancias),"\n"
 
 puts "Se encuentra arista Lima-Huanuco: #{grafo.se_encuentra_arista("Lima", "Huanuco")}"
 puts "Se encuentra arista Lima-Puno: #{grafo.se_encuentra_arista("Lima", "Puno")}"
